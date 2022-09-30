@@ -28,17 +28,17 @@ test.describe('Wtd Challenge Demo', () => {
         await page.goto(URLS.BASE_URL)
     })
 
-    test('As a standard user I should be able to log in', async ({page}) => {
+    test('[5] As a standard user I should be able to log in', async ({page}) => {
         await loginPage.submitLoginForm(CREDENTIALS.STANDARD_USER.username as string, CREDENTIALS.STANDARD_USER.password as string)
         await expect(page).toHaveURL(URLS.INVENTORY)
     })
 
-    test('As a fake user I should not be able to log in', async ({page}) => {
+    test('[9] As a fake user I should not be able to log in', async ({page}) => {
         await loginPage.submitLoginForm('', '')
         await expect(loginPage.error).toBeVisible()
     })
 
-    test('As a standard user I should be able to order the products by ascending price', async ({page}) => {
+    test('[10] As a standard user I should be able to order the products by ascending price', async ({page}) => {
         await loginPage.submitLoginForm(CREDENTIALS.STANDARD_USER.username as string, CREDENTIALS.STANDARD_USER.password as string)
         await expect(page).toHaveURL(URLS.INVENTORY)
 
@@ -47,7 +47,7 @@ test.describe('Wtd Challenge Demo', () => {
         expect(await inventoryPage.checkAscOrder()).toBe(true)
     })
    
-    test('As a standard user I should be able to add the two cheaper products to the cart without filter', async ({page}) => {
+    test('[11] As a standard user I should be able to add the two cheaper products to the cart without filter', async ({page}) => {
         await loginPage.submitLoginForm(CREDENTIALS.STANDARD_USER.username as string, CREDENTIALS.STANDARD_USER.password as string)
         await expect(page).toHaveURL(URLS.INVENTORY)
         
@@ -61,7 +61,7 @@ test.describe('Wtd Challenge Demo', () => {
 
     })
 
-    test('As a standard user I should be able to finish a purchase', async ({page}) => {
+    test('[12] As a standard user I should be able to finish a purchase', async ({page}) => {
         await loginPage.submitLoginForm(CREDENTIALS.STANDARD_USER.username as string, CREDENTIALS.STANDARD_USER.password as string)
         await expect(page).toHaveURL(URLS.INVENTORY)
         

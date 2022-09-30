@@ -13,7 +13,7 @@ test.describe('Visual test Demo', () => {
         await page.goto(URLS.BASE_URL)
     })
 
-    test('The Login page style should look as expected', async ({page}) => {
+    test('[13] The Login page style should look as expected', async ({page}) => {
         //[1/2]if you delete the snapshots under the visual.spec.ts-snapshots folder
         //[2/2]it will create a new snapshot every time you run the script on a new browser
         await expect(page).toHaveScreenshot('test-login.png')

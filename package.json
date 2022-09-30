@@ -13,6 +13,7 @@
     "@playwright/test": "^1.25.1"
   },
   "dependencies": {
-    "dotenv": "^16.0.1"
+    "dotenv": "^16.0.1",
+    "@alex_neo/playwright-azure-reporter":"^1.1.1"
   }
 }
